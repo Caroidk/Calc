@@ -1,0 +1,47 @@
+package Ordenamiento
+public class Func_Orden {
+
+	public void MaxMin (double[] arreglo) {
+		double aux;
+		int c = 1;
+
+			while (c<arreglo.length) {
+
+				for(int i=0; i<arreglo.length-1; i++) {
+					
+				    if (arreglo[i]<arreglo[i+1]) {
+				    	
+					    aux = arreglo[i];
+					    arreglo[i] = arreglo[i+1];
+					    arreglo[i+1] = aux;
+				    }
+				}
+				c++;
+				if (c==arreglo.length) {
+					break;
+				}
+			}
+	}
+	
+	public void MinMax (double[] arreglo) {
+		double aux;
+		int c = 1;
+		
+		while (c<arreglo.length) {
+			
+			for (int i=0; i<arreglo.length-1; i++) {
+				
+				if (arreglo[i]>arreglo[i+1]) {
+					
+					aux = arreglo[i];
+					arreglo[i] = arreglo[i+1];
+					arreglo[i+1] = aux;
+				}
+			}
+			c++;
+			if (c==arreglo.length) { 
+				break;
+			}
+		}
+	}
+}
