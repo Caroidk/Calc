@@ -1,0 +1,53 @@
+package Ordenamiento;
+import java.util.*;
+public class Orden {
+private static Scanner sc;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		sc = new Scanner(System.in);
+		int n;
+		double num;
+		int op;
+		Func_Orden x = new Func_Orden();
+		System.out.println("Ingrese cantidad de números que desea ordenar.");
+		n = sc.nextInt();
+    
+		if(n>0) {
+		    double[] Ord = new double [n];
+		    System.out.println("Ingrese números.");
+        
+		    for (int j=0; j<n; j++) {
+		       	num = sc.nextDouble();
+		      	Ord[j] = num;
+	    	}
+        
+	     	System.out.println("¿En qué orden desea ordenar los números anteriormente digitados?: \n1) Mayor a menor.\n2) Menor a mayor.\n");
+	    	op = sc.nextInt();
+		
+		    if (op>0 && op<3){
+		
+		      	if (op==1) {
+			          x.MaxMin(Ord);
+             
+			          for (int c=0; c<Ord.length; c++) {
+			        	System.out.println(Ord[c]);
+			          }
+		       	}
+		
+		        if (op==2) {
+			          x.MinMax(Ord);
+                
+			          for (int c=0; c<Ord.length; c++){
+			        	System.out.println(Ord[c]);
+			          }
+		        }
+	    	}
+		    else {System.out.println("Error, entrada no válida.");}
+	    	}
+		    else {System.out.println("Error, entrada no válida.");}
+	}
+		
+
+}
